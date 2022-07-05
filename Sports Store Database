@@ -1,0 +1,9 @@
+CREATE TABLE outdoor_items (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, activity TEXT);
+INSERT INTO outdoor_items VALUES (1, "hiking poles", 10, 30, "hiking");
+INSERT INTO outdoor_items VALUES (2, "boots", 30, 80, "hiking");
+INSERT INTO outdoor_items VALUES (3, "snowboard", 15, 250, "snowboarding");
+INSERT INTO outdoor_items VALUES (4, "tent", 5, 150, "camping");
+INSERT INTO outdoor_items VALUES (5, "binoculars", 20, 40, "miscellaneous");
+INSERT INTO outdoor_items VALUES (6, "protein bars", 50, 2, "food");
+INSERT INTO outdoor_items VALUES (7,"sleeping bag", 10, 10, "camping");
+SELECT price FROM outdoor_items GROUP BY price;
