@@ -1,0 +1,31 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE authors (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    wellknown_book TEXT,
+    nationality TEXT);
+    
+INSERT INTO authors (fullname, wellknown_book, nationality) VALUES ("Stephen King", "The Green Mile", "American");
+INSERT INTO authors (fullname, wellknown_book, nationality) VALUES ("Nathaniel Philbrick", "Mayflower", "American");
+INSERT INTO authors (fullname, wellknown_book, nationality) VALUES ("Bill Bryson", "A Walk in the Woods", "American");
+INSERT INTO authors (fullname, wellknown_book, nationality) VALUES ("Clint Smith", "How the Word is Passed", "American");
+INSERT INTO authors (fullname, wellknown_book, nationality) VALUES ("Diana Gabaldon", "Outlander", "American");
+
+CREATE table books (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    author_id INTEGER,
+    other_books TEXT,
+    residence TEXT);
+    
+INSERT INTO books (author_id, other_books, residence) VALUES (2, "In the Heart of the Sea", "Massachusetts");
+INSERT INTO books (author_id, other_books, residence) VALUES (3, "A Short History of Nearly Everything", "Iowa");
+INSERT INTO books (author_id, other_books, residence) VALUES (4, "Counting Descent", "Louisiana");
+INSERT INTO books (author_id, other_books, residence) VALUES (5, "Dragonfly in Amber", "Arizona");
+
+
+/*Return other books for each author*/
+SELECT authors.fullname, books.other_books
+FROM authors
+JOIN books
+ON authors.id = books.author_id;
