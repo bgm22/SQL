@@ -1,0 +1,27 @@
+I used a Kaggle SQL Database called "Spotifydata" to look at different factors for the Top 50 songs of the year.  
+
+#1 - What is the average danceability by artist and track?
+
+SELECT avg(danceability), artist_name, track_name
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name;
+
+#2 - Who are the top 10 artists based on popularity?
+
+SELECT artist_name, popularity
+FROM BIT_DB.Spotifydata
+WHERE popularity
+ORDER BY popularity DESC
+LIMIT 10;
+
+#3 - What artist released the longest song?
+
+SELECT MAX(duration_ms), artist_name, track_name
+FROM BIT_DB.Spotifydata;
+
+#4 - What's the danceability for the 10 most popular songs?
+
+SELECT danceability, track_name, artist_name, popularity
+FROM BIT_DB.spotifydata
+ORDER BY danceability desc
+LIMIT 10;
